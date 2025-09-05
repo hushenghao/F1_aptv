@@ -5,6 +5,7 @@ on:
     paths:
       - "**.py"
       - "requirements.txt"
+      - ".github/workflows/sync.yml"
   schedule:
     - cron: "0 */2 * * *"        # 每 2 小时触发（UTC）
   workflow_dispatch:
@@ -17,12 +18,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
 
     - name: Set up Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v5
       with:
-        python-version: "3.13"
+        python-version: "3.10"
         cache: 'pip'
 
     - name: Sync playlist
