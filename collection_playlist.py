@@ -68,7 +68,7 @@ def get_static_channels():
 
 def get_m3u_raw_from_url(url):
     try:
-        response = requests.get(url)
+        response = requests.get(url, headers={"User-Agent": "iPlayTV/3.3.9"})
         return response.text
     except Exception as e:
         print(f"Error occurred while downloading {url}: {e}")
