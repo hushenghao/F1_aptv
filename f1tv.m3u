@@ -1,6 +1,6 @@
 #EXTM3U x-tvg-url="https://11.112114.xyz/pp.xml,https://epg.aptv.app/pp.xml.gz,https://epg.aptv.app/xml,https://live.fanmingming.cn/e.xml"
 #EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/516/171/202204010048_1626679645474_H169_1080.jpg" group-title="CCTV5",CCTV5
-https://mgtv.ottiptv.cc/migu/641886683.m3u8?migutoken=105533d9e150febd9afc8a38ff5ff74681604e105790d2f63a1b602fdcad270a56185c8023e22cd81c2dc4c1608e70f80e776552cfe7de78ba9631124adf6394a2084634a354fae51c75e880a8
+https://mgtv.ottiptv.cc/migu/641886683.m3u8?migutoken=dedd9f5dd7c8c94820e19208bdfb3c8b241c83adb014b21559c7acd9ceedec863c8440aa53f5df4b1312b5cd9bb71cd3f940e2fbe0dd0885f8e3409c4542773c9dec66617dcf89fd508f7920f4
 #EXTINF:-1 tvg-id="CCTV5" tvg-name="CCTV5" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CCTV5.png" http-user-agent="AptvPlayer-UA" group-title="CCTV5",CCTV5
 http://101.35.240.114:88/live.php?id=CCTV5
 #EXTINF:-1 tvg-id="CCTV5" tvg-name="CCTV5" tvg-logo="https://live.fanmingming.cn/tv/CCTV5.png" group-title="CCTV5",CCTV5
@@ -31,7 +31,7 @@ http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://live.fanmingming.cn/tv/CCTV5.png" group-title="CCTV5",CCTV5
 http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226894/1.m3u8?
 #EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/516/288/202204010048_1626679726956_H169_1080.jpg" group-title="CCTV5+",CCTV5+
-https://mgtv.ottiptv.cc/migu/641886773.m3u8?migutoken=cecf37e161b1ec65e2cc6c5725dcc55b9b17838c8b63d0d8aba47a5dd51d0f95a68c47383b8190b3cfe8d3a7b55c53ef22be2b1946059c0762912ade5e580094da3088599a553faacdb2fab482
+https://mgtv.ottiptv.cc/migu/641886773.m3u8?migutoken=913e19f0cd95b3729d2edff560ccf94dab8a25c3d3952345452f411e3cfd50be2f05ed099426d164cab8e8b69cf84c9183fe991caa3f8c7d1e8d089eecebc11d4687939932c9f6ff201b3b77d0
 #EXTINF:-1 tvg-id="CCTV5PLUS" tvg-name="CCTV5+" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CCTV5+.png" group-title="CCTV5+",CCTV5+
 http://148.135.93.213/live.php?id=CCTV5p
 #EXTINF:-1 tvg-id="CCTV5+" tvg-name="CCTV5+" tvg-logo="https://live.fanmingming.cn/tv/CCTV5+.png" group-title="CCTV5+",CCTV5+
