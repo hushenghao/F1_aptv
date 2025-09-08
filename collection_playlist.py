@@ -19,15 +19,18 @@ g_source_m3u_list = [
 s_epg_urls = [
     "https://11.112114.xyz/pp.xml",
     "https://epg.aptv.app/pp.xml.gz",
-    "http://epg.51zmt.top:8000/e.xml"
+    "http://epg.51zmt.top:8000/e.xml",
 ]
 
 g_static_medias = [
     # (name, url, attributes)
-    ("五星体育", "https://cdn3.163189.xyz/163189/wxty"),
+    ("五星体育", "https://cdn3.163189.xyz/163189/wxty", {
+        "tvg-logo": "https://live.fanmingming.cn/tv/五星体育.png"
+    }),
 ]
 
 g_target_channels_tuple = [
+    # (search regex, name)
     (r"CCTV\s*5", "CCTV5"),
     (r"CCTV\s*5\S+", "CCTV5+"),
     ("五星体育", "五星体育"),
@@ -38,10 +41,10 @@ g_target_channels_tuple = [
 g_black_keywords = ["广播", "伴音"]
 
 g_normal_attrs_keys = [
-    IPTVAttr.GROUP_TITLE.value,
-    IPTVAttr.TVG_NAME.value,
-    IPTVAttr.TVG_ID.value,
-    IPTVAttr.TVG_LOGO.value,
+    IPTVAttr.GROUP_TITLE.value,  # group-title
+    IPTVAttr.TVG_NAME.value,  # tvg-name
+    IPTVAttr.TVG_ID.value,  # tvg-id
+    IPTVAttr.TVG_LOGO.value,  # tvg-logo
 ]
 
 
@@ -142,8 +145,7 @@ def main(args):
         # print(m3u_raw)
         result = find_target_channels(m3u_raw)
         channel_list.extend(result)
-        print(f"Finished processing source: {url}")
-        print("\n")
+        print(f"Finished processing source: {url}\n")
 
     print(f"Adding static channels, total: {len(g_static_medias)}")
     channel_list.extend(get_static_channels())

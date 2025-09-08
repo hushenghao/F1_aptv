@@ -55,7 +55,7 @@ http://148.135.93.213:81/live.php?id=五星体育
 http://home.wwang.pw:35455/itv/5000000010000017540.m3u8?cdn=bestzb
 #EXTINF:-1 group-title="五星体育" tvg-id="五星体育" tvg-logo="https://live.fanmingming.cn/tv/五星体育.png",五星体育
 http://8.138.7.223/tv/shtv.php?id=wxty
-#EXTINF:-1 group-title="五星体育" tvg-id="五星体育",五星体育
+#EXTINF:-1 group-title="五星体育" tvg-id="五星体育" tvg-logo="https://live.fanmingming.cn/tv/五星体育.png",五星体育
 https://cdn3.163189.xyz/163189/wxty
 #EXTINF:-1 group-title="广东体育" tvg-id="广东体育" tvg-logo="https://live.fanmingming.cn/tv/广东体育.png",广东体育
 http://120.238.94.10:9901/tsfile/live/1012_1.m3u8
