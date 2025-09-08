@@ -1,6 +1,5 @@
 import sys
 import re
-import difflib
 import requests
 from ipytv import playlist
 from ipytv.playlist import M3UPlaylist
@@ -17,9 +16,10 @@ g_source_m3u_list = [
     "https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u",  # https://github.com/fanmingming/live
 ]
 
-g_epg_urls = [
-    "https://11.112114.xyz/pp.xml", "https://epg.aptv.app/pp.xml.gz",
-    "https://epg.aptv.app/xml", "https://live.fanmingming.cn/e.xml"
+s_epg_urls = [
+    "https://11.112114.xyz/pp.xml",
+    "https://epg.aptv.app/pp.xml.gz",
+    "http://epg.51zmt.top:8000/e.xml",
 ]
 
 g_static_medias = [
@@ -27,20 +27,15 @@ g_static_medias = [
     ("五星体育", "https://cdn3.163189.xyz/163189/wxty"),
 ]
 
-g_channel_group_mapper = [
-    # [group_name, media_name1, media_name2, ...]
-    ["CCTV5+", "CCTV5PLUS", "CCTV5p"],
-    ["Sky Sports F1", "SkySportsF1"],
+g_target_channels_tuple = [
+    (r"CCTV\s*5", "CCTV5"),
+    (r"CCTV\s*5\S+", "CCTV5+"),
+    ("五星体育", "五星体育"),
+    ("广东体育", "广东体育"),
+    (r"Sky\s*Sports\s*F1", "Sky Sports F1"),
 ]
 
-g_target_channel_names = [
-    "五星体育",
-    "广东体育",
-] + g_channel_group_mapper[0] + g_channel_group_mapper[1] + ["CCTV5"]
-
 g_black_keywords = ["广播", "伴音"]
-
-g_key_group_title = IPTVAttr.GROUP_TITLE.value
 
 g_normal_attrs_keys = [
     IPTVAttr.GROUP_TITLE.value,
@@ -56,7 +51,10 @@ def create_iptv_channel(media):
         name=name,
         url=url,
         duration="-1",
-        attributes={g_key_group_title: find_channel_group(name)},
+        attributes={
+            IPTVAttr.GROUP_TITLE.value: name,
+            IPTVAttr.TVG_ID.value: name,
+        },
     )
     channel.attributes.update(attrs)
     return channel
@@ -70,33 +68,11 @@ def get_m3u_raw_from_url(url):
     try:
         response = requests.get(url)
         print(response.request.headers)
-        print(response.headers)
+        # print(response.headers)
         return response.text
     except Exception as e:
         print(f"Error occurred while downloading {url}: {e}")
     return None
-
-
-def find_channel_group(name):
-    for mapper in g_channel_group_mapper:
-        for n in mapper[1:]:
-            if n in name:
-                return mapper[0]
-    return name
-
-
-def get_standard_channel_name(name):
-    for tn in g_target_channel_names:
-        if tn in name:
-            return tn
-    return name
-
-
-def is_target_channel(name):
-    for tn in g_target_channel_names:
-        if tn in name:
-            return True
-    return False
 
 
 def is_black_channel(name):
@@ -116,18 +92,36 @@ def find_target_channels(m3u_raw):
         print(f"Error occurred while parsing M3U: {e}, {m3u_raw[:100]}")
         return channels
 
-    for media in pl:
-        name = media.attributes.get(
-            IPTVAttr.TVG_NAME.value,
-            media.attributes.get(IPTVAttr.TVG_ID.value, media.name)).strip()
-        # print(f"Checking channel: {name}")
-        if is_target_channel(name) and not is_black_channel(name):
-            name = get_standard_channel_name(name)
-            media.name = name
-            media.attributes[g_key_group_title] = find_channel_group(name)
-            channels.append(media)
+    epg_url = pl.get_attributes().get('x-tvg-url', None)
+    print(f"EPG URL: {epg_url}")
+    if epg_url:
+        epg_urls = epg_url.split(',') if epg_url else []
+        s_epg_urls.extend(epg_urls)
+
+    for regex, t_name in g_target_channels_tuple:
+        new_pl = pl.search(regex,
+                           where=[
+                               "name", "attributes.group-title",
+                               "attributes.tvg-id", "attributes.tvg-name"
+                           ],
+                           case_sensitive=False)
+        for media in new_pl:
+            if is_black_channel(media.name):
+                continue
             print(f"Found target channel: {media}")
-            continue
+            media.name = t_name
+            media.attributes[IPTVAttr.GROUP_TITLE.value] = t_name
+            media.attributes[IPTVAttr.TVG_ID.value] = t_name
+            media.attributes.pop(IPTVAttr.TVG_NAME.value, None)
+            # media.attributes.pop(IPTVAttr.TVG_LOGO.value, None)
+            # sort attributes
+            media.attributes = {
+                k: media.attributes[k]
+                for k in sorted(media.attributes.keys())
+            }
+            # remove extras
+            media.extras = []
+            channels.append(media)
     return channels
 
 
@@ -151,7 +145,7 @@ def main(args):
         print(f"Finished processing source: {url}")
         print("\n")
 
-    print(f"Adding static channels")
+    print(f"Adding static channels, total: {len(g_static_medias)}")
     channel_list.extend(get_static_channels())
 
     # remove duplicate channels
@@ -160,16 +154,19 @@ def main(args):
         for c in channel_list
     }.values())
     # sort by group and name
-    channel_list.sort(
-        key=lambda c: (c.attributes.get(g_key_group_title, c.name), c.name))
+    channel_list.sort(key=lambda c: (c.attributes.get(
+        IPTVAttr.GROUP_TITLE.value, c.name), c.name))
+
+    print(f"Create playlist, total: {len(channel_list)}")
 
     m3u_pl = M3UPlaylist()
-    m3u_pl.add_attributes({"x-tvg-url": ",".join(g_epg_urls)})
+    m3u_pl.add_attributes({"x-tvg-url": ",".join(list(set(s_epg_urls)))})
     m3u_pl.append_channels(channel_list)
 
     with open('f1tv.m3u', 'w', encoding='utf-8') as out_file:
         content = m3u_pl.to_m3u_plus_playlist()
         out_file.write(content)
+    print(f"Playlist saved to f1tv.m3u")
 
 
 if __name__ == "__main__":
