@@ -159,8 +159,12 @@ def main(args):
 
     print(f"Create playlist, total: {len(channel_list)}")
 
+    s_epg_urls = list(set(s_epg_urls))
+    s_epg_urls.sort()
+    print(f"EPG URLs: {s_epg_urls}")
+
     m3u_pl = M3UPlaylist()
-    m3u_pl.add_attributes({"x-tvg-url": ",".join(list(set(s_epg_urls)))})
+    m3u_pl.add_attributes({"x-tvg-url": ",".join(s_epg_urls)})
     m3u_pl.append_channels(channel_list)
 
     with open('f1tv.m3u', 'w', encoding='utf-8') as out_file:
