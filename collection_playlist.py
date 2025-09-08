@@ -19,7 +19,7 @@ g_source_m3u_list = [
 s_epg_urls = [
     "https://11.112114.xyz/pp.xml",
     "https://epg.aptv.app/pp.xml.gz",
-    "http://epg.51zmt.top:8000/e.xml",
+    "http://epg.51zmt.top:8000/e.xml"
 ]
 
 g_static_medias = [
@@ -159,12 +159,13 @@ def main(args):
 
     print(f"Create playlist, total: {len(channel_list)}")
 
-    s_epg_urls = list(set(s_epg_urls))
-    s_epg_urls.sort()
-    print(f"EPG URLs: {s_epg_urls}")
+    # deduplicate and sort epg urls
+    epg_urls = list(set(s_epg_urls))
+    epg_urls.sort()
+    print(f"EPG URLs: {epg_urls}")
 
     m3u_pl = M3UPlaylist()
-    m3u_pl.add_attributes({"x-tvg-url": ",".join(s_epg_urls)})
+    m3u_pl.add_attributes({"x-tvg-url": ",".join(epg_urls)})
     m3u_pl.append_channels(channel_list)
 
     with open('f1tv.m3u', 'w', encoding='utf-8') as out_file:
