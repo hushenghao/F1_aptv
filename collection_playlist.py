@@ -16,6 +16,11 @@ g_source_m3u_list = [
     "https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u",  # https://github.com/fanmingming/live
 ]
 
+g_source_m3u_list_ua = {
+    "https://github.com/mursor1985/LIVE/raw/refs/heads/main/iptv.m3u":
+    "okHttp/Mod-1.2.0.1",
+}
+
 s_epg_urls = [
     "https://11.112114.xyz/pp.xml",
     "https://epg.aptv.app/pp.xml.gz",
@@ -31,14 +36,14 @@ g_static_medias = [
 
 g_target_channels_tuple = [
     # (search regex, name)
-    (r"CCTV\s*5", "CCTV5"),
-    (r"CCTV\s*5\S+", "CCTV5+"),
+    (r"^\s*CCTV\s*5(体育)?\s*$", "CCTV5"),
+    (r"^\s*CCTV\s*5[\w+]+(体育赛事)?\s*$", "CCTV5+"),
     ("五星体育", "五星体育"),
     ("广东体育", "广东体育"),
     (r"Sky\s*Sports\s*F1", "Sky Sports F1"),
 ]
 
-g_black_keywords = ["广播", "伴音"]
+g_black_keywords = ["广播", "伴音", "Radio"]
 
 g_normal_attrs_keys = [
     IPTVAttr.GROUP_TITLE.value,  # group-title
@@ -85,7 +90,7 @@ def is_black_channel(name):
     return False
 
 
-def find_target_channels(m3u_raw):
+def find_target_channels(m3u_raw, ua=None):
     # fix m3u defind
     m3u_raw = re.sub(r"#EXTINF:-1([,:;])", "#EXTINF:-1 ", m3u_raw, flags=re.M)
     channels = []
@@ -116,7 +121,8 @@ def find_target_channels(m3u_raw):
             media.attributes[IPTVAttr.GROUP_TITLE.value] = t_name
             media.attributes[IPTVAttr.TVG_ID.value] = t_name
             media.attributes.pop(IPTVAttr.TVG_NAME.value, None)
-            # media.attributes.pop(IPTVAttr.TVG_LOGO.value, None)
+            if ua:
+                media.attributes["http-user-agent"] = ua
             # sort attributes
             media.attributes = {
                 k: media.attributes[k]
@@ -143,7 +149,7 @@ def main(args):
         if m3u_raw is None:
             continue
         # print(m3u_raw)
-        result = find_target_channels(m3u_raw)
+        result = find_target_channels(m3u_raw, ua=g_source_m3u_list_ua.get(url))
         channel_list.extend(result)
         print(f"Finished processing source: {url}\n")
 
