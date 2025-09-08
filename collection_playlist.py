@@ -11,8 +11,8 @@ g_source_m3u_list = [
     "https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",  # https://github.com/Kimentanm/aptv/
     "https://github.com/suxuang/myIPTV/raw/refs/heads/main/ipv6.m3u",  # https://github.com/Kimentanm/aptv/
     "https://github.com/suxuang/myIPTV/raw/refs/heads/main/ipv4.m3u",  # https://github.com/suxuang/myIPTV
-    "https://tv-1.iill.top/m3u/Gather",  # YanG/Gather
-    "https://tv-1.iill.top/m3u/Sport",  # YanG/Sport
+    # "https://tv-1.iill.top/m3u/Gather",  # YanG/Gather
+    # "https://tv-1.iill.top/m3u/Sport",  # YanG/Sport
     "https://raw.githubusercontent.com/YueChan/Live/main/APTV.m3u",  # https://github.com/YueChan/Live
     "https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u",  # https://github.com/fanmingming/live
 ]
@@ -68,7 +68,9 @@ def get_static_channels():
 
 def get_m3u_raw_from_url(url):
     try:
-        response = requests.get(url, headers={"User-Agent": "iPlayTV/3.3.9"})
+        response = requests.get(url)
+        print(response.request.headers)
+        print(response.headers)
         return response.text
     except Exception as e:
         print(f"Error occurred while downloading {url}: {e}")

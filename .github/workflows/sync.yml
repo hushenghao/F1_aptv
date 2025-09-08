@@ -5,7 +5,6 @@ on:
     paths:
       - "**.py"
       - "requirements.txt"
-      - ".github/workflows/sync.yml"
   schedule:
     - cron: "0 */2 * * *"        # 每 2 小时触发（UTC）
   workflow_dispatch:
