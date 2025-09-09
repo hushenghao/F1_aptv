@@ -1,6 +1,6 @@
 #EXTM3U x-tvg-url="http://epg.51zmt.top:8000/e.xml,https://11.112114.xyz/pp.xml,https://epg.aptv.app/pp.xml.gz,https://epg.aptv.app/xml,https://live.fanmingming.cn/e.xml"
 #EXTINF:-1 group-title="CCTV5" http-user-agent="okHttp/Mod-1.2.0.1" tvg-id="CCTV5" tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/516/171/202204010048_1626679645474_H169_1080.jpg",CCTV5
-https://mgtv.ottiptv.cc/mg/641886683.m3u8?token=b9483e405dbbd3d877c435789e0ea5e743a84438e1879b014c9b1edb250ce24943dc756918636830bd496e7037216563068e5efbf814c90a8cdb2164d4d7804e7ae8941c2091b3302d7c5fab11&tm=1757363644&sign=2e6d4b683805283fd20152cc4d8f2dcc
+https://mgtv.ottiptv.cc/mg/641886683.m3u8?token=6c49c50cdf8aa0eda0a00c38f95517f40d327f07d308d09aa820421c26b14024bae965495fdb9762668b4e8cc42f1809466015650dfe7d50bc0de4db09d8c3f952f68584699eef30b9f01bf17c&tm=1757387428&sign=4075eef6b0c4cfa748df7ba38739ade7
 #EXTINF:-1 group-title="CCTV5" tvg-id="CCTV5",CCTV5
 http://ott.mobaibox.com/PLTV/3/224/3221228502/index.m3u8
 #EXTINF:-1 group-title="CCTV5" http-user-agent="AptvPlayer-UA" tvg-id="CCTV5" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CCTV5.png",CCTV5
@@ -30,7 +30,7 @@ http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226019/index.m3u8
 #EXTINF:-1 group-title="CCTV5" tvg-id="CCTV5" tvg-logo="https://live.fanmingming.cn/tv/CCTV5.png",CCTV5
 http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226469/1.m3u8?
 #EXTINF:-1 group-title="CCTV5+" http-user-agent="okHttp/Mod-1.2.0.1" tvg-id="CCTV5+" tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/516/288/202204010048_1626679726956_H169_1080.jpg",CCTV5+
-https://mgtv.ottiptv.cc/mg/641886773.m3u8?token=219977574792d0d50b2492badd37738fbc67b52c1f15d399cd9e0b5cbc564fc275ba6dd98401f7576c0edbaa557a35ffac9b6cdf70a1a40e1b8aac2407e1568ef5bbeb581a80be99e7bf9cb9e8&tm=1757363644&sign=8cf751d782e61276c2394b6d3d421819
+https://mgtv.ottiptv.cc/mg/641886773.m3u8?token=0e47a58aee0c766cee42433ccc0df0f9dbaeb31233f0916a27c52231a008789243906c494256b43df6a92b0c6c47ec4b82b6d5800dad591ff808b64c6561983b4011b4a2d7f6d4b9bb499e989b&tm=1757387428&sign=909a01f044c6d44bc8e7dd339fa47d49
 #EXTINF:-1 group-title="CCTV5+" tvg-id="CCTV5+",CCTV5+
 http://ott.mobaibox.com/PLTV/3/224/3221228176/index.m3u8
 #EXTINF:-1 group-title="CCTV5+" tvg-id="CCTV5+" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CCTV5+.png",CCTV5+
