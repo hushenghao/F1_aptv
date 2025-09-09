@@ -36,8 +36,8 @@ g_static_medias = [
 
 g_target_channels_tuple = [
     # (search regex, name)
-    (r"^\s*CCTV\s*5(体育)?\s*$", "CCTV5"),
-    (r"^\s*CCTV\s*5[\w+]+(体育赛事)?\s*$", "CCTV5+"),
+    (r"^\s*CCTV-?5\s*(体育)?\s*$", "CCTV5"),
+    (r"^\s*CCTV-?5(\+|p|plus)+\s*(体育赛事)?\s*$", "CCTV5+"),
     ("五星体育", "五星体育"),
     ("广东体育", "广东体育"),
     (r"Sky\s*Sports\s*F1", "Sky Sports F1"),
@@ -109,14 +109,16 @@ def find_target_channels(m3u_raw, ua=None):
     for regex, t_name in g_target_channels_tuple:
         new_pl = pl.search(regex,
                            where=[
-                               "name", "attributes.group-title",
-                               "attributes.tvg-id", "attributes.tvg-name"
+                               "name",
+                               "attributes.tvg-id",
+                            #    "attributes.tvg-name",# some channels have wrong tvg-name
+                            #    "attributes.group-title",
                            ],
                            case_sensitive=False)
         for media in new_pl:
             if is_black_channel(media.name):
                 continue
-            print(f"Found target channel: {media}")
+            print(f"Found target channel: {media}, regex: {regex}, name: {t_name}")
             media.name = t_name
             media.attributes[IPTVAttr.GROUP_TITLE.value] = t_name
             media.attributes[IPTVAttr.TVG_ID.value] = t_name
@@ -149,7 +151,8 @@ def main(args):
         if m3u_raw is None:
             continue
         # print(m3u_raw)
-        result = find_target_channels(m3u_raw, ua=g_source_m3u_list_ua.get(url))
+        result = find_target_channels(m3u_raw,
+                                      ua=g_source_m3u_list_ua.get(url))
         channel_list.extend(result)
         print(f"Finished processing source: {url}\n")
 
