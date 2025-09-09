@@ -7,9 +7,10 @@ from ipytv.channel import IPTVAttr, IPTVChannel
 
 g_source_m3u_list = [
     "https://github.com/mursor1985/LIVE/raw/refs/heads/main/iptv.m3u",  # https://github.com/mursor1985/LIVE, https://sub.ottiptv.cc/iptv.m3u
-    "https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",  # https://github.com/Kimentanm/aptv/
-    "https://github.com/suxuang/myIPTV/raw/refs/heads/main/ipv6.m3u",  # https://github.com/Kimentanm/aptv/
-    "https://github.com/suxuang/myIPTV/raw/refs/heads/main/ipv4.m3u",  # https://github.com/suxuang/myIPTV
+    "https://github.com/Kimentanm/aptv/raw/refs/heads/master/m3u/jsyd.m3u",  # https://github.com/Kimentanm/aptv/
+    "https://github.com/Kimentanm/aptv/raw/refs/heads/master/m3u/iptv.m3u",
+    "https://github.com/suxuang/myIPTV/raw/refs/heads/main/ipv6.m3u",  # https://github.com/suxuang/myIPTV
+    "https://github.com/suxuang/myIPTV/raw/refs/heads/main/ipv4.m3u",
     # "https://tv-1.iill.top/m3u/Gather",  # YanG/Gather
     # "https://tv-1.iill.top/m3u/Sport",  # YanG/Sport
     "https://raw.githubusercontent.com/YueChan/Live/main/APTV.m3u",  # https://github.com/YueChan/Live
@@ -107,18 +108,21 @@ def find_target_channels(m3u_raw, ua=None):
         s_epg_urls.extend(epg_urls)
 
     for regex, t_name in g_target_channels_tuple:
-        new_pl = pl.search(regex,
-                           where=[
-                               "name",
-                               "attributes.tvg-id",
-                            #    "attributes.tvg-name",# some channels have wrong tvg-name
-                            #    "attributes.group-title",
-                           ],
-                           case_sensitive=False)
+        new_pl = pl.search(
+            regex,
+            where=[
+                "name",
+                "attributes.tvg-id",
+                #    "attributes.tvg-name",# some channels have wrong tvg-name
+                #    "attributes.group-title",
+            ],
+            case_sensitive=False)
         for media in new_pl:
             if is_black_channel(media.name):
                 continue
-            print(f"Found target channel: {media}, regex: {regex}, name: {t_name}")
+            print(
+                f"Found target channel: {media}, regex: {regex}, name: {t_name}"
+            )
             media.name = t_name
             media.attributes[IPTVAttr.GROUP_TITLE.value] = t_name
             media.attributes[IPTVAttr.TVG_ID.value] = t_name
