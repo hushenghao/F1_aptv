@@ -1,6 +1,8 @@
 #EXTM3U x-tvg-url="http://epg.51zmt.top:8000/e.xml,https://11.112114.xyz/pp.xml,https://epg.aptv.app/pp.xml.gz,https://epg.aptv.app/xml,https://live.fanmingming.cn/e.xml"
 #EXTINF:-1 group-title="CCTV5" http-user-agent="okHttp/Mod-1.2.0.1" tvg-id="CCTV5" tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/516/171/202204010048_1626679645474_H169_1080.jpg",CCTV5
 https://mgtv.ottiptv.cc/mg/641886683.m3u8?token=b9483e405dbbd3d877c435789e0ea5e743a84438e1879b014c9b1edb250ce24943dc756918636830bd496e7037216563068e5efbf814c90a8cdb2164d4d7804e7ae8941c2091b3302d7c5fab11&tm=1757363644&sign=2e6d4b683805283fd20152cc4d8f2dcc
+#EXTINF:-1 group-title="CCTV5" tvg-id="CCTV5",CCTV5
+http://ott.mobaibox.com/PLTV/3/224/3221228502/index.m3u8
 #EXTINF:-1 group-title="CCTV5" http-user-agent="AptvPlayer-UA" tvg-id="CCTV5" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CCTV5.png",CCTV5
 http://101.35.240.114:88/live.php?id=CCTV5
 #EXTINF:-1 group-title="CCTV5" tvg-id="CCTV5" tvg-logo="https://live.fanmingming.cn/tv/CCTV5.png",CCTV5
@@ -29,6 +31,8 @@ http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226019/index.m3u8
 http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226469/1.m3u8?
 #EXTINF:-1 group-title="CCTV5+" http-user-agent="okHttp/Mod-1.2.0.1" tvg-id="CCTV5+" tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/516/288/202204010048_1626679726956_H169_1080.jpg",CCTV5+
 https://mgtv.ottiptv.cc/mg/641886773.m3u8?token=219977574792d0d50b2492badd37738fbc67b52c1f15d399cd9e0b5cbc564fc275ba6dd98401f7576c0edbaa557a35ffac9b6cdf70a1a40e1b8aac2407e1568ef5bbeb581a80be99e7bf9cb9e8&tm=1757363644&sign=8cf751d782e61276c2394b6d3d421819
+#EXTINF:-1 group-title="CCTV5+" tvg-id="CCTV5+",CCTV5+
+http://ott.mobaibox.com/PLTV/3/224/3221228176/index.m3u8
 #EXTINF:-1 group-title="CCTV5+" tvg-id="CCTV5+" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CCTV5+.png",CCTV5+
 http://148.135.93.213/live.php?id=CCTV5p
 #EXTINF:-1 group-title="CCTV5+" tvg-id="CCTV5+" tvg-logo="https://live.fanmingming.cn/tv/CCTV5+.png",CCTV5+
