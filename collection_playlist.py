@@ -6,7 +6,7 @@ from ipytv.playlist import M3UPlaylist
 from ipytv.channel import IPTVAttr, IPTVChannel
 
 g_source_m3u_list = [
-    "https://github.com/mursor1985/LIVE/raw/refs/heads/main/iptv.m3u",  # https://github.com/mursor1985/LIVE, https://sub.ottiptv.cc/iptv.m3u
+    # see https://t.me/feiyangofficalchannel/1371, # https://github.com/mursor1985/LIVE
     "https://github.com/Kimentanm/aptv/raw/refs/heads/master/m3u/jsyd.m3u",  # https://github.com/Kimentanm/aptv/
     "https://github.com/Kimentanm/aptv/raw/refs/heads/master/m3u/iptv.m3u",
     "https://github.com/suxuang/myIPTV/raw/refs/heads/main/ipv6.m3u",  # https://github.com/suxuang/myIPTV
@@ -16,11 +16,6 @@ g_source_m3u_list = [
     "https://raw.githubusercontent.com/YueChan/Live/main/APTV.m3u",  # https://github.com/YueChan/Live
     "https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u",  # https://github.com/fanmingming/live
 ]
-
-g_source_m3u_list_ua = {
-    "https://github.com/mursor1985/LIVE/raw/refs/heads/main/iptv.m3u":
-    "okHttp/Mod-1.2.0.1",
-}
 
 s_epg_urls = [
     "https://11.112114.xyz/pp.xml",
@@ -32,6 +27,11 @@ g_static_medias = [
     # (name, url, attributes)
     ("五星体育", "https://cdn3.163189.xyz/163189/wxty", {
         "tvg-logo": "https://live.fanmingming.cn/tv/五星体育.png"
+    }),
+    # copy from mursor
+    ("五星体育", "https://gdcucc.v1.mk/gdcucc/wxty.m3u8", {
+        "tvg-logo": "https://live.fanmingming.cn/tv/五星体育.png",
+        "http-user-agent": "okHttp/Mod-1.4.0.0"
     }),
 ]
 
