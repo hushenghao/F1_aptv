@@ -17,6 +17,10 @@ g_source_m3u_list = [
     "https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u",  # https://github.com/fanmingming/live
 ]
 
+g_source_m3u_list_ua = {
+    # 'url': 'user-agent'
+}
+
 s_epg_urls = [
     "https://11.112114.xyz/pp.xml",
     "https://epg.aptv.app/pp.xml.gz",
