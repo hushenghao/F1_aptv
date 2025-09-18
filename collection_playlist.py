@@ -15,6 +15,8 @@ g_source_m3u_list = [
     # "https://tv-1.iill.top/m3u/Sport",  # YanG/Sport
     "https://raw.githubusercontent.com/YueChan/Live/main/APTV.m3u",  # https://github.com/YueChan/Live
     "https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u",  # https://github.com/fanmingming/live
+    "https://github.com/vbskycn/iptv/raw/refs/heads/master/tv/iptv4.m3u",  # https://github.com/vbskycn/iptv
+    # "https://github.com/vbskycn/iptv/raw/refs/heads/master/tv/iptv6.m3u",
 ]
 
 g_source_m3u_list_ua = {
