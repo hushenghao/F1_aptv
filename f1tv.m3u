@@ -13,7 +13,7 @@ http://148.135.93.213:81/live.php?id=CCTV5
 http://iptv.huuc.edu.cn/hls/cctv5hd.m3u8
 #EXTINF:-1 group-title="CCTV5" tvg-id="CCTV5" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CCTV5.png",CCTV5
 http://ygbh.site/php/bfgd.php?id=064
-#EXTINF:-1 group-title="CCTV5" tvg-id="CCTV5" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CCTV5.png",CCTV5
+#EXTINF:-1 group-title="CCTV5" tvg-id="CCTV5" tvg-logo="https://livecdn.zbds.org/logo/CCTV5.png",CCTV5
 https://cc06.tv12.xyz/5.m3u8
 #EXTINF:-1 group-title="CCTV5" tvg-id="CCTV5" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CCTV5.png",CCTV5
 http://112.27.235.94:8000/hls/5/index.m3u8
@@ -39,7 +39,7 @@ http://39.134.65.71/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225603/index
 http://148.135.93.213:81/live.php?id=CCTV5p
 #EXTINF:-1 group-title="CCTV5+" tvg-id="CCTV5+" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CCTV5+.png",CCTV5+
 http://ygbh.site/php/bfgd.php?id=246
-#EXTINF:-1 group-title="CCTV5+" tvg-id="CCTV5+" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CCTV5+.png",CCTV5+
+#EXTINF:-1 group-title="CCTV5+" tvg-id="CCTV5+" tvg-logo="https://livecdn.zbds.org/logo/CCTV5+.png",CCTV5+
 https://cc06.tv12.xyz/6.m3u8
 #EXTINF:-1 group-title="CCTV5+" tvg-id="CCTV5+" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/CCTV5+.png",CCTV5+
 http://112.27.235.94:8000/hls/6/index.m3u8
