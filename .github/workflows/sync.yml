@@ -48,7 +48,7 @@ jobs:
         fi
 
         git add *.m3u
-        git commit -m "chore: auto-update IPTV playlists - $(date '+%Y-%m-%d %H:%M:%S %Z')"
+        git commit -m "chore: auto-update IPTV playlists - $(TZ=UTC-8 date '+%Y-%m-%d %H:%M:%S %Z')"
         echo "✅ 文件已提交"
 
         git push origin ${{ github.ref_name }}
