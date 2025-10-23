@@ -61,8 +61,6 @@ http://home.wwang.pw:35455/itv/5000000010000017540.m3u8?cdn=bestzb
 https://zby.130519.xyz/PLTV/11/224/3221225732/index.m3u8
 #EXTINF:-1 group-title="五星体育" tvg-id="五星体育" tvg-logo="https://live.fanmingming.cn/tv/五星体育.png",五星体育
 http://8.138.7.223/tv/shtv.php?id=wxty
-#EXTINF:-1 group-title="五星体育" tvg-id="五星体育" tvg-logo="https://tb.zbds.top/logo/五星体育.png",五星体育
-https://other.ottiptv.cc/wxty.m3u8
 #EXTINF:-1 group-title="五星体育" tvg-id="五星体育" tvg-logo="https://live.fanmingming.cn/tv/五星体育.png",五星体育
 https://cdn3.163189.xyz/163189/wxty
 #EXTINF:-1 group-title="五星体育" tvg-id="五星体育" tvg-logo="https://live.fanmingming.cn/tv/五星体育.png" http-user-agent="okHttp/Mod-1.4.0.0",五星体育
