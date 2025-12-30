@@ -6,7 +6,7 @@ on:
       - "**.py"
       - "requirements.txt"
   schedule:
-    - cron: "0 */2 * * *"        # 每 2 小时触发（UTC）
+    - cron: "0 */2 * * 0,5,6"        # 周五周六周日，每 2 小时触发（UTC）
   workflow_dispatch:
 
 permissions:
