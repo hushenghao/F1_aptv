@@ -26,7 +26,7 @@ http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221
 #EXTINF:-1 group-title="CCTV5" tvg-id="CCTV5" tvg-logo="https://tb.zbds.top/logo/CCTV5.png",CCTV5
 http://58.57.40.22:9901/tsfile/live/1004_1.m3u8
 #EXTINF:-1 group-title="CCTV5" tvg-id="CCTV5" tvg-logo="https://tb.zbds.top/logo/CCTV5.png",CCTV5
-http://gmxw.7766.org:808/hls/93/index.m3u8
+https://ldcctvwbcdks.v.kcdnvip.com/ldcctvwbcd/cdrmldcctv5plus_1/index.m3u8?b=200-2100
 #EXTINF:-1 group-title="CCTV5+" tvg-id="CCTV5+",CCTV5+
 http://ott.mobaibox.com/PLTV/3/224/3221228176/index.m3u8
 #EXTINF:-1 catchup="append" catchup-source="?playbackbegin=${(b)yyyyMMddHHmmss}&playbackend=${(e)yyyyMMddHHmmss}" group-title="CCTV5+" tvg-id="CCTV5+",CCTV5+
@@ -59,6 +59,8 @@ https://zby.130519.xyz/PLTV/11/224/3221225732/index.m3u8
 http://bp-livetytv.bestv.cn/ch/bestvwxty.m3u8
 #EXTINF:-1 group-title="五星体育" tvg-id="五星体育" tvg-logo="https://live.fanmingming.cn/tv/五星体育.png",五星体育
 http://8.138.7.223/tv/shtv.php?id=wxty
+#EXTINF:-1 group-title="五星体育" tvg-id="五星体育" tvg-logo="https://tb.zbds.top/logo/五星体育.png",五星体育
+https://other.ottiptv.cc/wxty.m3u8
 #EXTINF:-1 group-title="五星体育" tvg-id="五星体育" tvg-logo="https://live.fanmingming.cn/tv/五星体育.png",五星体育
 https://cdn3.163189.xyz/163189/wxty
 #EXTINF:-1 group-title="五星体育" tvg-id="五星体育" tvg-logo="https://live.fanmingming.cn/tv/五星体育.png" http-user-agent="okHttp/Mod-1.4.0.0",五星体育
@@ -67,5 +69,5 @@ https://gdcucc.v1.mk/gdcucc/wxty.m3u8
 http://120.238.94.10:9901/tsfile/live/1012_1.m3u8
 #EXTINF:-1 group-title="广东体育" tvg-id="广东体育" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/广东体育.png",广东体育
 http://r.jdshipin.com/LiYdg
-#EXTINF:-1 group-title="广东体育" tvg-id="广东体育" tvg-logo="https://live.fanmingming.cn/tv/广东体育.png",广东体育
+#EXTINF:-1 group-title="广东体育" tvg-id="广东体育" tvg-logo="https://tb.zbds.top/logo/广东体育.png",广东体育
 http://cdn2.163189.xyz/live/gdty/stream.m3u8
