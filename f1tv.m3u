@@ -3,6 +3,8 @@
 http://ott.mobaibox.com/PLTV/3/224/3221228502/index.m3u8
 #EXTINF:-1 group-title="CCTV5" http-user-agent="iPhone" tvg-id="CCTV5",CCTV5
 http://101.35.240.114:88/live.php?id=CCTV5
+#EXTINF:-1 group-title="CCTV5" http-user-agent="iPhone" tvg-id="CCTV5",CCTV5
+http://101.35.240.114:88/live.php?id=CCTV5p
 #EXTINF:-1 group-title="CCTV5" tvg-id="CCTV5" tvg-logo="https://live.fanmingming.cn/tv/CCTV5.png",CCTV5
 http://218.13.14.6:60050/tsfile/live/1005_1.m3u8
 #EXTINF:-1 group-title="CCTV5" tvg-id="CCTV5" tvg-logo="https://live.fanmingming.cn/tv/CCTV5.png",CCTV5
@@ -27,8 +29,6 @@ http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221
 http://124.116.183.146:9901/tsfile/live/0005_1.m3u8
 #EXTINF:-1 group-title="CCTV5+" tvg-id="CCTV5+",CCTV5+
 http://ott.mobaibox.com/PLTV/3/224/3221228176/index.m3u8
-#EXTINF:-1 group-title="CCTV5+" http-user-agent="iPhone" tvg-id="CCTV5+",CCTV5+
-http://101.35.240.114:88/live.php?id=CCTV5p
 #EXTINF:-1 group-title="CCTV5+" tvg-id="CCTV5+" tvg-logo="https://live.fanmingming.cn/tv/CCTV5+.png",CCTV5+
 http://tv.20191209.xyz:37377/migu/641886773.m3u8?migutoken=dfc218ce4c1ff00475c0aef03e0b883bf8a277b36671d5ca1eb7cc5f7ce7919d01ee050351170891d6e103aa7adea25827c13c901ccf6cdf4a8a370e7fd90c8b198dcb1e8814bbf2ed4fb0c8
 #EXTINF:-1 group-title="CCTV5+" tvg-id="CCTV5+" tvg-logo="https://live.fanmingming.cn/tv/CCTV5+.png",CCTV5+
