@@ -24,7 +24,7 @@ https://zby.130519.xyz/PLTV/11/224/3221225734/index.m3u8
 #EXTINF:-1 group-title="CCTV5" tvg-id="CCTV5" tvg-logo="https://live.fanmingming.cn/tv/CCTV5.png",CCTV5
 http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226469/1.m3u8?
 #EXTINF:-1 group-title="CCTV5" tvg-id="CCTV5" tvg-logo="https://tb.zbds.top/logo/CCTV5.png",CCTV5
-http://111.59.24.227:8181/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0
+http://113.90.154.189:9901/tsfile/live/0018_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="CCTV5+" tvg-id="CCTV5+",CCTV5+
 http://ott.mobaibox.com/PLTV/3/224/3221228176/index.m3u8
 #EXTINF:-1 group-title="CCTV5+" http-user-agent="iPhone" tvg-id="CCTV5+",CCTV5+
@@ -44,7 +44,7 @@ http://112.27.235.94:8000/hls/6/index.m3u8
 #EXTINF:-1 group-title="CCTV5+" tvg-id="CCTV5+" tvg-logo="https://live.fanmingming.cn/tv/CCTV5.png",CCTV5+
 http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226894/1.m3u8?
 #EXTINF:-1 group-title="CCTV5+" tvg-id="CCTV5+" tvg-logo="https://tb.zbds.top/logo/CCTV5+.png",CCTV5+
-http://123.118.55.165:45237/tsfile/live/0016_2.m3u8?key=txiptv&playlive=1&authid=0
+http://120.40.39.246:352/newlive/live/hls/6/live.m3u8
 #EXTINF:-1 group-title="五星体育" http-header="Referer=https://live.kankanews.com/" http-user-agent="iPhone" tvg-id="五星体育" tvg-logo="https://live.fanmingming.cn/tv/五星体育.png",五星体育
 http://101.35.240.114:88/live.php?id=五星体育
 #EXTINF:-1 group-title="五星体育" tvg-id="五星体育" tvg-logo="https://live.fanmingming.cn/tv/五星体育.png",五星体育
